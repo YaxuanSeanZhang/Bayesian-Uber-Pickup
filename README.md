@@ -21,6 +21,13 @@ $$
 Y_{it} = 𝑃𝑜𝑖𝑠𝑠𝑜𝑛(n_i* R_{it})
 $$
 
+At the second level, four different Bayesian models will be implemented and compared:
+ * Base Model: The base model is designed as a log link of a combined effect of zonal characteristics predictors.
+
+ $$
+ log(R_{it}) = \alpha + \beta * X_i + \epsilon_i
+ $$
+
 ## Files
   * `GeoData-Processing.ipynb` This script serves as a comprehensive data pipeline, including data fetching, quality assurance and quality control (QAQC), modeling, geo-simulation modeling, and model evaluation.
   * `Uber_Prediction.ipynb`:  This script automates the processes involved in uploading the simulation results to a PostGIS database using the shp2pgsql tool.
