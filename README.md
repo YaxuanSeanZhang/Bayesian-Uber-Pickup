@@ -25,7 +25,15 @@ At the second level, four different Bayesian models will be implemented and comp
  * Base Model: The base model is designed as a log link of a combined effect of zonal characteristics predictors.
 
  $$
- log(R_{it}) = \alpha + \beta * X_i + \epsilon_i
+ log(R_{it}) = \alpha + \beta * X_i + \epsilon_{it}
+ $$
+
+ * Spatial Model: The spatial Bayesian model adds a spatial effect term, borrowing information from its neighboring counties. The neighboring counties are defined as the counties that share boundaries. The spatial effect term ($\theta_𝑖$) follows a conditional autoregression distribution.
+
+ $$
+ log(R_{it}) = \alpha + \beta * X_i + \theta_i + \epsilon_{it}
+ \theta_i ~ Normal(\mu_i,{\sigma_\theta}^2)
+ \mu_i ~ CAR(W, {\sigma_\mu}^2)
  $$
 
 ## Files
