@@ -18,7 +18,7 @@ The raw data comes from two sources:
 Hierarchical Bayesian models are applied. At the first level, the number of pickups ($𝑌_{𝑖𝑡}$) follows a Poisson distribution, where 𝑛𝑖 is the base pickup frequency for each county and $𝑅_{𝑖𝑡}$ is the pickup rates of each county 𝑖 at a 𝑡-th time interval.
 
 $$
-Y_{it} = 𝑃𝑜𝑖𝑠𝑠𝑜𝑛(n_i* R_{it})
+Y_{it} \sim \text{Poisson}(n_i* R_{it})
 $$
 
 At the second level, four different Bayesian models will be implemented and compared:
@@ -35,11 +35,11 @@ At the second level, four different Bayesian models will be implemented and comp
  $$
  
  $$
- \theta_i ~ Normal(\mu_i,{\sigma_\theta}^2)
+ \theta_i \sim \text{Normal}(\mu_i,{\sigma_\theta}^2)
  $$
  
  $$
- \mu_i ~ CAR(W, {\sigma_\mu}^2)
+ \mu_i \sim \text{CAR}(W, {\sigma_\mu}^2)
  $$
 
  * Temporal Model: It adds a temporal effect term, borrowing information from its neighboring time interval. The neighboring time intervals are defined as the adjacent hour, e.g., 7 am and 8 am. The temporal effect term ($\phi_t$) follows a conditional autoregression distribution.
@@ -49,11 +49,11 @@ At the second level, four different Bayesian models will be implemented and comp
  $$
  
  $$
- \phi_t ~ Normal(v_t,{\sigma_\phi}^2)
+ \phi_t \sim \text{Normal}(v_t,{\sigma_\phi}^2)
  $$
  
  $$
- v_t ~ CAR(U, {\sigma_v}^2)
+ v_t \sim \text{CAR}(U, {\sigma_v}^2)
  $$
 
   * Spatial-Temporal Model: It adds a spatial effect term and a temporal effect term as illustrated above.
@@ -63,19 +63,19 @@ At the second level, four different Bayesian models will be implemented and comp
  $$
 
  $$
- \theta_i ~ Normal(\mu_i,{\sigma_\theta}^2)
+ \theta_i \sim \text{Normal}(\mu_i,{\sigma_\theta}^2)
  $$
  
  $$
- \mu_i ~ CAR(W, {\sigma_\mu}^2)
+ \mu_i \sim \text{CAR}(W, {\sigma_\mu}^2)
  $$
  
  $$
- \phi_t ~ Normal(v_t,{\sigma_\phi}^2)
+ \phi_t \sim \text{Normal}(v_t,{\sigma_\phi}^2)
  $$
  
  $$
- v_t ~ CAR(U, {\sigma_v}^2)
+ v_t \sim \text{CAR}(U, {\sigma_v}^2)
  $$
  
 ## Files
