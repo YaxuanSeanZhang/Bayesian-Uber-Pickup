@@ -32,9 +32,13 @@ At the second level, four different Bayesian models will be implemented and comp
 
  $$
  log(R_{it}) = \alpha + \beta * X_i + \theta_i + \epsilon_{it}
+ $$
  
+ $$
  \theta_i ~ Normal(\mu_i,{\sigma_\theta}^2)
+ $$
  
+ $$
  \mu_i ~ CAR(W, {\sigma_\mu}^2)
  $$
 
