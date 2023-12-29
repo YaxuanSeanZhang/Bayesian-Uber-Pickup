@@ -15,9 +15,13 @@ The raw data comes from two sources:
   * NYC county boundaries and zone characteristics: total population, employed population, housing unit [(NHGIS)](https://data2.nhgis.org/main)
 
 ## Model
-Hierarchical Bayesian models are applied. At the first level, the number of pickups (𝑌_𝑖𝑡) follows a Poisson distribution, where 𝑛𝑖 is the base pickup frequency for each county and 𝑅_𝑖𝑡 is the pickup rates of each county 𝑖 at a 𝑡-th time interval.
+Hierarchical Bayesian models are applied. At the first level, the number of pickups ($\𝑌_𝑖𝑡) follows a Poisson distribution, where 𝑛𝑖 is the base pickup frequency for each county and $\𝑅_𝑖𝑡 is the pickup rates of each county 𝑖 at a 𝑡-th time interval.
 $$
 \Y_it = 𝑃𝑜𝑖𝑠𝑠𝑜𝑛(n_i* R_it)
+$$
+
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
 $$
 
 ## Files
